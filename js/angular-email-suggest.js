@@ -146,7 +146,7 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 					$elements.on('blur', function(){
 						$timeout(function(){
 							datalistScope.display = false;
-						}, 30);
+						}, 100);
 					});
 
 					$elements.on('keyup change', function(ev){
