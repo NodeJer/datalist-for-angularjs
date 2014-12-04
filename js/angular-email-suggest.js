@@ -145,8 +145,7 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 
 					$elements.on('blur', function(){
 						datalistScope.$apply(function(){
-							alert('message')
-							datalistScope.selected = false;
+							datalistScope.display = false;
 						});
 					});
 
