@@ -48,7 +48,7 @@ factory('offset', function(){
 }).
 
 
-directive('datalist', function($rootScope){
+directive('datalist', function($rootScope, $document){
 	
 	return {
 		scope:{
@@ -69,7 +69,13 @@ directive('datalist', function($rootScope){
 		replace: true,
 		transclude: true,
 		link: function($scope, $elements, $attrs, controller) {
-			
+			$document.on('click', function(){
+				angular.forEach($rootScope.datalistScopes, function(scope){
+					scope.$apply(function(){
+						scope.display = false;
+					});
+				});
+			});
 		}
 	};
 }).
