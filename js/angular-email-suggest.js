@@ -144,9 +144,9 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 					});
 
 					$elements.on('blur', function(){
-						datalistScope.$apply(function(){
+						$timeout(function(){
 							datalistScope.display = false;
-						});
+						}, 30);
 					});
 
 					$elements.on('keyup change', function(ev){
