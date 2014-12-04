@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+<title>无标题文档</title>
+<style>
+    *{ margin:0; padding:0;}
+    body{
+        padding-top: 20px;
+    }
+    .user{
+        display: block;
+        width: 200px;
+        margin: auto; margin-bottom: 50px;
+    }
+</style>
+<link rel="stylesheet" href="style/datalist.css" />
+</head>
+
+<body>
+
+    <input type="text" list="email" class="user" ng-model="email" placeholder="请输入账号或邮箱">
+
+    <datalist id="email">
+            <option value="{{email|emailFilter}}@sina.com">
+            <option value="{{email|emailFilter}}@163.com">
+            <option value="{{email|emailFilter}}@qq.com">
+            <option value="{{email|emailFilter}}@126.com">
+            <option value="{{email|emailFilter}}@vip.sina.com">
+            <option value="{{email|emailFilter}}@sina.cn">
+            <option value="{{email|emailFilter}}@hotmail.com">
+            <option value="{{email|emailFilter}}@gmail.com">
+            <option value="{{email|emailFilter}}@sohu.com">
+            <option value="{{email|emailFilter}}@yahoo.cn">
+            <option value="{{email|emailFilter}}@139.com">
+            <option value="{{email|emailFilter}}@wo.com.cn">
+            <option value="{{email|emailFilter}}@189.cn">
+    </datalist>
+
+    <input type="text" list="search" class="user" placeholder="请输入账号或邮箱">
+    <datalist id="search">
+            <option value="js">
+            <option value="php">
+            <option value="java">
+            <option value="object-c">
+    </datalist>
+    
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-email-suggest.js"></script>
+    <script>
+        angular.module('app', ['datalist']);
+
+        angular.bootstrap(document.body, ['app']);
+    </script>
+</body>
+</html>
