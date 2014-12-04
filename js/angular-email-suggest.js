@@ -69,13 +69,6 @@ directive('datalist', function($rootScope, $document){
 		replace: true,
 		transclude: true,
 		link: function($scope, $elements, $attrs, controller) {
-			$document.on('click', function(){
-				angular.forEach($rootScope.datalistScopes, function(scope){
-					scope.$apply(function(){
-						scope.display = false;
-					});
-				});
-			});
 		}
 	};
 }).
@@ -148,6 +141,12 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 						if(index > -1){
 							selectCurrentScope($scope.result.selected[index]);
 						}
+					});
+
+					$elements.on('blur', function(){
+						datalistScope.$apply(function(){
+							datalistScope.selected = false;
+						});
 					});
 
 					$elements.on('keyup change', function(ev){
