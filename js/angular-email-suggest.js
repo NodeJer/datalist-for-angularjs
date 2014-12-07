@@ -7,7 +7,10 @@ var ie = (function(){
     return v > 4 ? v : false;
 }());
 
-alert(ie);
+if(ie && ie<10){
+	document.createElement('datalist');
+	document.createElement('option');
+}
 
 angular.module('datalist', []).
 
