@@ -37,14 +37,15 @@
             <div option value="{{email|emailFilter}}@189.cn"></div>
     </div>
 
-    <input type="text" list="search" class="user" placeholder="请输入账号或邮箱">
+    <input type="text" list="search" class="user" ng-model="language" placeholder="请输入账号或邮箱">
     <div id="search" datalist>
             <div option value="js"></div>
             <div option value="php"></div>
             <div option value="java"></div>
             <div option value="object-c"></div>
     </div>
-    
+    <p>{{email}}</p>
+    <p>{{language}}</p>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-email-suggest.js"></script>
     <script>
