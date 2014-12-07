@@ -137,7 +137,6 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 						//下
 						else if(ev.which === 40){
 							index = (index+1) % $scope.result.selected.length;
-							console.log($scope.result.selected[index]);
 						}
 						
 						if(index > -1){
