@@ -101,11 +101,14 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 	return {
 		scope: {
 			list: '@'
-		}, 
+		},
+		require: 'ngModel',
 		controller: function($scope, $element, $attrs, $transclude) {
 
 		},
-		link: function($scope, $elements, $attrs, controller) {
+		link: function($scope, $elements, $attrs, ngModel) {
+			if(!ngModel)return;
+			
 			var index = -1;
 			var timer = $interval(function(){
 				//输入框对应的datalist scope
@@ -209,7 +212,8 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 			}
 
 			function update(){
-				$elements[0].value = $scope.selectedScope.value;
+				ngModel.$setViewValue($scope.selectedScope.value);
+				ngModel.$render();
 
 				$scope.datalistScopes.$apply(function(){
 					$scope.datalistScopes.display = false;
