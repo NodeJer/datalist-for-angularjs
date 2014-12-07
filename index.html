@@ -21,29 +21,29 @@
 <body>
     <input type="text" list="email" class="user" ng-model="email" placeholder="请输入账号或邮箱">
 
-    <datalist id="email">
-            <option value="{{email|emailFilter}}@sina.com">
-            <option value="{{email|emailFilter}}@163.com">
-            <option value="{{email|emailFilter}}@qq.com">
-            <option value="{{email|emailFilter}}@126.com">
-            <option value="{{email|emailFilter}}@vip.sina.com">
-            <option value="{{email|emailFilter}}@sina.cn">
-            <option value="{{email|emailFilter}}@hotmail.com">
-            <option value="{{email|emailFilter}}@gmail.com">
-            <option value="{{email|emailFilter}}@sohu.com">
-            <option value="{{email|emailFilter}}@yahoo.cn">
-            <option value="{{email|emailFilter}}@139.com">
-            <option value="{{email|emailFilter}}@wo.com.cn">
-            <option value="{{email|emailFilter}}@189.cn">
-    </datalist>
+    <div id="email" datalist>
+            <div option value="{{email|emailFilter}}@sina.com"></div>
+            <div option value="{{email|emailFilter}}@163.com"></div>
+            <div option value="{{email|emailFilter}}@qq.com"></div>
+            <div option value="{{email|emailFilter}}@126.com"></div>
+            <div option value="{{email|emailFilter}}@vip.sina.com"></div>
+            <div option value="{{email|emailFilter}}@sina.cn"></div>
+            <div option value="{{email|emailFilter}}@hotmail.com"></div>
+            <div option value="{{email|emailFilter}}@gmail.com"></div>
+            <div option value="{{email|emailFilter}}@sohu.com"></div>
+            <div option value="{{email|emailFilter}}@yahoo.cn"></div>
+            <div option value="{{email|emailFilter}}@139.com"></div>
+            <div option value="{{email|emailFilter}}@wo.com.cn"></div>
+            <div option value="{{email|emailFilter}}@189.cn"></div>
+    </div>
 
     <input type="text" list="search" class="user" placeholder="请输入账号或邮箱">
-    <datalist id="search">
-            <option value="js">
-            <option value="php">
-            <option value="java">
-            <option value="object-c">
-    </datalist>
+    <div id="search" datalist>
+            <div option value="js"></div>
+            <div option value="php"></div>
+            <div option value="java"></div>
+            <div option value="object-c"></div>
+    </div>
     
     <script src="js/angular.min.js"></script>
     <script src="js/angular-email-suggest.js"></script>
