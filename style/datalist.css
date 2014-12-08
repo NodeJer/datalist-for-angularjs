@@ -15,4 +15,5 @@
 .datalist .option:hover,
 .datalist .option.selected{
 	background: #ccc;
+	color: #fff;
 }
