@@ -107,7 +107,9 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 
 		},
 		link: function($scope, $elements, $attrs, ngModel) {
-			if(!ngModel)return;
+			if($attrs.nextfocus){
+				$scope.oNextFocus = document.getElementById($attrs.nextfocus);
+			}
 			
 			var index = -1;
 			var timer = $interval(function(){
@@ -224,6 +226,8 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 				});
 				
 				index = -1;
+				if($scope.oNextFocus)
+					$scope.oNextFocus.focus();
 			}
 
 			function find(model, scopes){

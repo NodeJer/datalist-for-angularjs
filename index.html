@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <input type="text" list="email" class="user" ng-model="email" placeholder="请输入账号或邮箱">
+    <input type="text" list="email" class="user" ng-model="email" nextfocus="test" placeholder="请输入账号或邮箱">
 
     <div id="email" datalist>
             <div option value="{{email|emailFilter}}@sina.com"></div>
@@ -37,7 +37,7 @@
             <div option value="{{email|emailFilter}}@189.cn"></div>
     </div>
 
-    <input type="text" list="search" class="user" ng-model="language" placeholder="请输入账号或邮箱">
+    <input type="text" id="test" list="search" class="user" ng-model="language" placeholder="请输入账号或邮箱">
     <div id="search" datalist>
             <div option value="js"></div>
             <div option value="php"></div>
