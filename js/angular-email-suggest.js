@@ -111,9 +111,10 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 			}
 			
 			var index = -1;
+			var datalistScope;
 			var timer = $interval(function(){
 				//输入框对应的datalist scope
-				var datalistScope = $scope.datalistScopes = $rootScope.datalistScopes[$scope.list];
+				datalistScope = $scope.datalistScopes = $rootScope.datalistScopes[$scope.list];
 
 				if(datalistScope){
 					$interval.cancel(timer);
@@ -160,16 +161,8 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 
 						//找到与输入框值匹配的option scope 以及没有匹配到的
 						var result = $scope.result = find(this.value, datalistScope.options);
-						//获取输入框的在窗口的位置
-						var offsetPos = offset(this, window);
-
-
-						//设置datalist的position和minwidth
-						datalistScope.$elements.css({
-							minWidth: this.offsetWidth+'px',
-							left: offsetPos.left+'px',
-							top: offsetPos.top+this.offsetHeight+'px'
-						});
+						
+						setPosition();
 
 						//没有匹配到隐藏datalist
 						datalistScope.$apply(function(){
@@ -196,6 +189,23 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 					});
 				}
 			}, 30);
+
+			angular.element(window).on('resize', function(){
+				setPosition();
+			});
+
+			function setPosition(){
+				//获取输入框的在窗口的位置
+				var offsetPos = offset($elements[0], window);
+
+
+				//设置datalist的position和minwidth
+				datalistScope.$elements.css({
+					minWidth: $elements[0].offsetWidth+'px',
+					left: offsetPos.left+'px',
+					top: offsetPos.top+$elements[0].offsetHeight+'px'
+				});
+			}
 
 			function selectCurrentScope(selectedScope){
 				$scope.selectedScope = selectedScope;
