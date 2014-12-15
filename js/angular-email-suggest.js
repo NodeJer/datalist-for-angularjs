@@ -124,13 +124,13 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 						update();
 					});
 
+					
+
 					$elements.on('keydown', function(ev){
+						console.log(1);
 						if(ev.which === 13){
 							update();
 						}
-					});
-
-					$elements.on('keydown', function(ev){
 
 						if(ev.which != 38 && ev.which != 40)return;
 
