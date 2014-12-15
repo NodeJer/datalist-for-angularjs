@@ -127,21 +127,19 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 					
 
 					$elements.on('keydown', function(ev){
-						console.log(ev.keyCode);
-						console.log(ev.which);
-						if(ev.which === 13){
+						
+						if(ev.keyCode === 13){
 							update();
 						}
 
-						if(ev.which != 38 && ev.which != 40)return;
+						if(ev.keyCode != 38 && ev.keyCode != 40)return;
 
 						//上
-						if( ev.which === 38){
+						if( ev.keyCode === 38){
 							index = (index-1+$scope.result.selected.length) % $scope.result.selected.length;
 						}
 						//下
-						else if(ev.which === 40){
-							console.log(1);
+						else if(ev.keyCode === 40){
 							index = (index+1) % $scope.result.selected.length;
 						}
 						
@@ -158,7 +156,7 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 
 					$elements.on('keyup change', function(ev){
 
-						if(ev.which === 13)return;
+						if(ev.keyCode === 13)return;
 
 						//找到与输入框值匹配的option scope 以及没有匹配到的
 						var result = $scope.result = find(this.value, datalistScope.options);
