@@ -16,9 +16,10 @@
     }
 </style>
 <link rel="stylesheet" href="style/datalist.css" />
-<!--[if lte IE 9]>
+<!--[if lte IE 8]>
     <script>
-        alert(1);
+        document.createElement('datalist');
+        document.createElement('option');
     </script>
 <![endif]-->
 </head>
@@ -43,13 +44,19 @@
     </div>
 
     <input type="text" id="test" list="search" class="user" ng-model="language" placeholder="请输入账号或邮箱">
-
-    <div id="search" datalist>
+    
+    <datalist id="search">
+            <option value="js"></option>
+            <option value="php"></option>
+            <option value="java"></option>
+            <option value="object-c"></option>
+    </datalist>
+    <!-- <div id="search" datalist>
             <div option value="js"></div>
             <div option value="php"></div>
             <div option value="java"></div>
             <div option value="object-c"></div>
-    </div>
+    </div> -->
     <p>    {{email}}</p>
     <p style="padding-left: 10px">{{language}}</p>
     <script src="js/angular.min.js"></script>
