@@ -29,7 +29,6 @@ factory('offset', function(){
 		if(parentWin === window || parentWin === document){
 			parentWin = document.body;
 		}
-		parentWin.style.position = 'relative';
 
 		var offsetTop = element.offsetTop;
 		var offsetLeft = element.offsetLeft;
@@ -141,6 +140,7 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 						}
 						//下
 						else if(ev.which === 40){
+							console.log(1);
 							index = (index+1) % $scope.result.selected.length;
 						}
 						
