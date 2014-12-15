@@ -127,7 +127,7 @@ directive('list', function($interval, $timeout, $rootScope, offset){
 					
 
 					$elements.on('keydown', function(ev){
-						console.log(1);
+						console.log(ev.which);
 						if(ev.which === 13){
 							update();
 						}
