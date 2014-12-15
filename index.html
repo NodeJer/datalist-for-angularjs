@@ -16,6 +16,11 @@
     }
 </style>
 <link rel="stylesheet" href="style/datalist.css" />
+<!--[if lte IE 8]>
+    <script>
+        alert(1);
+    </script>
+<![endif]-->
 </head>
 
 <body>
@@ -38,7 +43,7 @@
     </div>
 
     <input type="text" id="test" list="search" class="user" ng-model="language" placeholder="请输入账号或邮箱">
-    
+
     <div id="search" datalist>
             <div option value="js"></div>
             <div option value="php"></div>
